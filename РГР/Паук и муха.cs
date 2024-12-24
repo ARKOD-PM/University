@@ -59,7 +59,7 @@ class Program
         }
     }
 
-     qteMinimumDistance(double[] dim, double[] A, double[] B)
+    static double CalculateMinimumDistance(double[] dim, double[] A, double[] B)
     {
         for (int i = 0; i < 3; i++)
         {
@@ -147,7 +147,7 @@ class Program
                 unB = new double[dim.Length];
                 distA = new double[dim.Length];
                 distB = new double[dim.Length];
-                
+
                 distA[j] = a * dim[j] + Math.Pow(-1, a + 2) * A[j];
                 distB[k] = b * dim[k] + Math.Pow(-1, b + 2) * B[k];
                 distA[k] = b * dim[k] + Math.Pow(-1, b + 2) * A[k];
