@@ -59,7 +59,7 @@ class Program
         }
     }
 
-    static double CalculateMinimumDistance(double[] dim, double[] A, double[] B)
+     qteMinimumDistance(double[] dim, double[] A, double[] B)
     {
         for (int i = 0; i < 3; i++)
         {
