@@ -1,10 +1,12 @@
 ﻿using System;
 
-class IntClass {
+class IntClass
+{
 	public int First { get; set; }
 	public int Second { get; set; }
 
-	public IntClass(int first, int second) {
+	public IntClass(int first, int second)
+	{
 		First = first;
 		Second = second;
 	}
@@ -13,18 +15,22 @@ class IntClass {
 	public int Subtract(int x, int y) => x - y;
 	public int Multiply(int x, int y) => x * y;
 	
-	public int Divide(int x, int y) {
-		if (y == 0) {
+	public int Divide(int x, int y)
+	{
+		if (y == 0)
+		{
 			throw new DivideByZeroException("Ошибка: деление на ноль невозможно");
 		}
 		return x / y;
 	}
 }
 
-class Program {
+class Program
+{
 	delegate int Operation(int a, int b);
 
-	static void Main() {
+	static void Main()
+	{
 		var obj = new IntClass(10, 5);
 
 		Operation group1 = null;
@@ -44,15 +50,19 @@ class Program {
 		ExecuteOperations(group2, obj.First, obj.Second);
 	}
 
-	static void ExecuteOperations(Operation operationGroup, int initialValue, int secondValue) {
+	static void ExecuteOperations(Operation operationGroup, int initialValue, int secondValue)
+	{
 		int result = initialValue;
 		
-		foreach (Operation op in operationGroup.GetInvocationList()) {
-			try {
+		foreach (Operation op in operationGroup.GetInvocationList())
+		{
+			try
+			{
 				result = op(result, secondValue);
 				Console.WriteLine($"Результат: {result}");
 			}
-			catch (DivideByZeroException ex) {
+			catch (DivideByZeroException ex)
+			{
 				Console.WriteLine($"Ошибка: {ex.Message}");
 				return;
 			}
