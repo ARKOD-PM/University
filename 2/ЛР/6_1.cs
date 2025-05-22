@@ -18,20 +18,20 @@ class Program
 {
 	static void Main()
 	{
-	  Console.WriteLine("Введите количество телефонов:");
-	int n = int.Parse(Console.ReadLine());
+		Console.WriteLine("Введите количество телефонов:");
+		int n = int.Parse(Console.ReadLine());
 
-	List<Phone> phones = new List<Phone>();
-	for (int i = 0; i < n; i++)
-	{
-		Console.Write($"Номер {i+1}: ");
-		string num = Console.ReadLine();
-	
-		Console.Write($"Оператор {i+1}: ");
-		string op = Console.ReadLine();
-	
-		phones.Add(new Phone(num, op));
-	} 
+		List<Phone> phones = new List<Phone>();
+		for (int i = 0; i < n; i++)
+		{
+			Console.Write($"Номер {i+1}: ");
+			string num = Console.ReadLine();
+		
+			Console.Write($"Оператор {i+1}: ");
+			string op = Console.ReadLine();
+		
+			phones.Add(new Phone(num, op));
+		} 
 		Dictionary<string, int> operatorStats = new Dictionary<string, int>();
 
 		foreach (Phone phone in phones)
